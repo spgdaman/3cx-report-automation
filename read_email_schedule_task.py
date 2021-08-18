@@ -184,23 +184,22 @@ df1.to_csv('Call_Volumes.csv', index=False)
 
 # create a json object to load into bigquery
 data = pd.read_csv('CallVolumes.csv', index_col=False)
+data = data.rename(columns={'Call Time': 'Call_Time', 'Caller ID': 'Caller_ID'})
 data_json = json.loads(data.to_json(orient='table',index=False))
 
-# from google.cloud import bigquery
+from google.cloud import bigquery
 
-# # Construct a BigQuery client object.
-# client = bigquery.Client()
+# Construct a BigQuery client object.
+client = bigquery.Client()
 
-# table_id = 'businessintelligence-320707.Customer_Service.3cx'
+table_id = 'businessintelligence-320707.Customer_Service.3cx'
 
-# rows_iter = client.list_rows(table_id)
-# for i in rows_iter:
-#     print(i)
+rows_iter = client.list_rows(table_id)
 
-# rows_to_insert = data_json['data']
+rows_to_insert = data_json['data']
 
-# errors = client.insert_rows_json(table_id, rows_to_insert)  # Make an API request.
-# if errors == []:
-#     print("New rows have been added.")
-# else:
-#     print("Encountered errors while inserting rows: {}".format(errors))
+errors = client.insert_rows_json(table_id, rows_to_insert)  # Make an API request.
+if errors == []:
+    print("New rows have been added.")
+else:
+    print("Encountered errors while inserting rows: {}".format(errors))
