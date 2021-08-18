@@ -176,11 +176,11 @@ def exec():
     clean_data()
 
     # Read the main file
-    df1 = pd.read_csv('Call_Volumes.csv', low_memory=False)
-    df2 = pd.read_csv('CallVolumes.csv', low_memory=False)
-    df1 = df1.append(df2)
-    print(df1)
-    df1.to_csv('Call_Volumes.csv', index=False)
+    # df1 = pd.read_csv('Call_Volumes.csv', low_memory=False)
+    # df2 = pd.read_csv('CallVolumes.csv', low_memory=False)
+    # df1 = df1.append(df2)
+    # print(df1)
+    # df1.to_csv('Call_Volumes.csv', index=False)
 
     # create a json object to load into bigquery
     data = pd.read_csv('CallVolumes.csv', index_col=False)
