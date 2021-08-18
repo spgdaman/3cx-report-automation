@@ -182,9 +182,9 @@ df1 = df1.append(df2)
 print(df1)
 df1.to_csv('Call_Volumes.csv', index=False)
 
-# # create a json object to load into bigquery
-# data = pd.read_csv('CallVolumes.csv', index_col=False)
-# data_json = json.loads(data.to_json(orient='table',index=False))
+# create a json object to load into bigquery
+data = pd.read_csv('CallVolumes.csv', index_col=False)
+data_json = json.loads(data.to_json(orient='table',index=False))
 
 # from google.cloud import bigquery
 
