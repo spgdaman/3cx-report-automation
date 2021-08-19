@@ -1,3 +1,4 @@
 from read_email_schedule_task import exec
 
-exec()
+if __name__ == __main__:
+    exec()
