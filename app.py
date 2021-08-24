@@ -2,8 +2,6 @@ from read_email_schedule_task import execute
 import schedule
 import time
 
-execute = execute()
-
 schedule.every().day.at("05:30").do(execute)
 
 while True:
