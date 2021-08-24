@@ -94,6 +94,7 @@ schedule==1.1.0
 Send2Trash==1.7.1
 six==1.16.0
 smmap==4.0.0
+streamlit==0.85.1
 soupsieve==2.2.1
 SQLAlchemy==1.4.21
 streamlit==0.84.1
