@@ -5,9 +5,10 @@ import time
 schedule.every().day.at("05:30").do(execute)
 
 while True:
+    print("Job in process...")
     schedule.run_pending()
-    time.sleep(86400)
     print("Job done!")
+    time.sleep(86400)
 
 
 # if __name__ == "__main__":
