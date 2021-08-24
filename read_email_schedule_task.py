@@ -204,4 +204,4 @@ def exec():
     else:
         print("Encountered errors while inserting rows: {}".format(errors))
 
-exec()
+execute()

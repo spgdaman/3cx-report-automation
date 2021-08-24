@@ -1,4 +1,4 @@
-from read_email_schedule_task import exec
+from read_email_schedule_task import execute
 import schedule
 import time
 
