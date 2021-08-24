@@ -1,5 +1,7 @@
 FROM python:3.7
 
+EXPOSE port 8001
+
 WORKDIR /3cx-report-automation
 
 COPY requirements.txt ./requirements.txt
