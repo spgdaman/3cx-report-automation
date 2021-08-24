@@ -160,7 +160,7 @@ def read_message(service, message_id):
     print("="*50)
     return(a)
 
-def exec():
+def execute():
     link = read_message(service, first_email_search_result_id)
 
     call_records = requests.get(link).content
