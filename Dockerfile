@@ -2,7 +2,7 @@ FROM python:3.7
 
 EXPOSE 8001
 
-WORKDIR /app
+WORKDIR /3cx-report-automation
 
 COPY requirements.txt ./requirements.txt
 
