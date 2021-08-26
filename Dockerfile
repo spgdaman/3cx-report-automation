@@ -1,6 +1,6 @@
 FROM python:3.7
 
-# EXPOSE 8001
+EXPOSE 8001
 
 WORKDIR /3cx-report-automation
 
