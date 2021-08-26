@@ -278,9 +278,19 @@ import datetime
 
 app = Flask(__name__)
 
+@app.route('/')
+def home():
+    last_run = datetime.datetime.now()
+    return f'Last run at {last_run}'
 
-@app.route('/execute')
+@app.route('/execute', methods=["GET"])
 def entry_point():
     dispatch_data()
     last_run = datetime.datetime.now()
     return f'Job executed last at {last_run}'
+
+if __name__ == "__main__":
+    # Used when running locally only. When deploying to Google App
+    # Engine, a webserver process such as Gunicorn will serve the app. This
+    # can be configured by adding an `entrypoint` to app.yaml.
+    app.run(host="localhost", port=8080, debug=True)
