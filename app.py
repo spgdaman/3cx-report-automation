@@ -218,7 +218,7 @@ def read_message(service, message_id):
     print("="*50)
     return(a)
 
-def execute():
+def dispatch_data():
     link = read_message(service, first_email_search_result_id)
 
     call_records = requests.get(link).content
@@ -262,13 +262,25 @@ def execute():
     else:
         print("Encountered errors while inserting rows: {}".format(errors))
 
-import schedule
-import time
+# import schedule
+# import time
 
-schedule.every().day.at("05:30").do(execute)
+# schedule.every().day.at("05:30").do(execute)
 
-while True:
-    print("Job in process...")
-    schedule.run_pending()
-    print("Job done!")
-    time.sleep(86400)
+# while True:
+#     print("Job in process...")
+#     schedule.run_pending()
+#     print("Job done!")
+#     time.sleep(86400)
+
+from flask import Flask
+import datetime
+
+app = Flask(__name__)
+
+
+@app.route('/execute')
+def entry_point():
+    dispatch_data()
+    last_run = datetime.datetime.now()
+    return f'Job executed last at {last_run}'
