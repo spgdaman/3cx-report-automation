@@ -1,13 +1,14 @@
 FROM python:3.7
 
-WORKDIR /app
+# Add and install Python Modules
+ADD requirements.txt /src/requirements.txt
+RUN cd /src; pip install -r requirements.txt
 
-COPY requirements.txt ./requirements.txt
+# Bundle app source
+ADD . /src
 
-RUN pip3 install -r requirements.txt
+# Expose the port
+EXPOSE 5000
 
-COPY . .
-
-ENTRYPOINT [ "python" ]
-
-CMD [ "main.py" ]
+# Run
+CMD ["python", "/src/main.py"]
