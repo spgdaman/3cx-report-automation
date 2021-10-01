@@ -7,6 +7,9 @@ RUN cd /src; pip install -r requirements.txt
 # Bundle app source
 ADD . /src
 
+# copy credentials.json
+COPY credentials.json /src/credentials.json
+
 # Expose the port
 EXPOSE 5050
 
