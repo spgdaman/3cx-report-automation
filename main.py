@@ -262,6 +262,8 @@ def dispatch_data():
     else:
         print("Encountered errors while inserting rows: {}".format(errors))
 
+# dispatch_data()
+
 # import schedule
 # import time
 
