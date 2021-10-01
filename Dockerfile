@@ -8,7 +8,7 @@ RUN cd /src; pip install -r requirements.txt
 ADD . /src
 
 # Expose the port
-EXPOSE 5000
+EXPOSE 5050
 
 # Run
 CMD ["python", "/src/main.py"]
