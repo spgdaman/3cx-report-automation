@@ -10,4 +10,4 @@ RUN pip install -r requirements.txt
 EXPOSE 5050
 
 # Run
-CMD ["python", "/src/main.py"]
+CMD python main.py
