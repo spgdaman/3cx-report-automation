@@ -289,7 +289,7 @@ def home():
 def entry_point():
     dispatch_data()
     last_run = datetime.datetime.now()
-    return f'Job executed last at {last_run}'
+    return f'New rows have been added, job executed last at {last_run}'
 
 if __name__ == "__main__":
     # Used when running locally only. When deploying to Google App

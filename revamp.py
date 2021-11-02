@@ -63,20 +63,20 @@ def clean_data():
     new_df_items_2 = list()
 
     for items in df_items:
-        if items[0] == '2':
+        if items[0] == '2' or items[0] == 2:
             items = '+' + items
             new_df_items.append(items)
-        elif items[0] == '7':
+        elif items[0] == '7' or items[0] == 7:
             items = '+254' + items
             new_df_items.append(items)
         else:
             new_df_items.append(items)
 
     for items in df_items_2:
-        if items[0] == '2':
+        if items[0] == '2' or items[0] == 2:
             items = '+' + items
             new_df_items_2.append(items)
-        elif items[0] == '7':
+        elif items[0] == '7' or items[0] == 7:
             items = '+254' + items
             new_df_items_2.append(items)
         else:

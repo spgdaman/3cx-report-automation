@@ -1,13 +1,15 @@
 FROM python:3.7
 
+COPY ./requirements.txt /app/requirements.txt
 
-# Bundle app source
-ADD . .
+WORKDIR /app
 
 RUN pip install -r requirements.txt
 
-# Expose the port
+COPY . /app
+
 EXPOSE 5050
 
-# Run
-CMD python main.py
+ENTRYPOINT [ "python" ]
+
+CMD [ "main.py" ]
